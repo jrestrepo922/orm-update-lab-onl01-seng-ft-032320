@@ -69,7 +69,7 @@ class Student
       SELECT * FROM students WHERE name = ? LIMIT 1;
     SQL
 
-    array = DB[:conn]
+    array = DB[:conn].execute(sql, name)
     binding.pry
   end
 
