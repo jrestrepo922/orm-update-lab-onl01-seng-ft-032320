@@ -69,7 +69,9 @@ class Student
       SELECT * FROM students WHERE name = ? LIMIT 1;
     SQL
 
-    array = DB[:conn].execute(sql, name)
+    array = DB[:conn].execute(sql, name).collect { |row|
+      self.new_from_db(row)
+    }
     binding.pry
   end
 
