@@ -59,6 +59,11 @@ class Student
     student
   end
 
+  def self.new_from_db(array)
+    student = Student.new
+    student.id = 
+  end 
+
 
 end
 
