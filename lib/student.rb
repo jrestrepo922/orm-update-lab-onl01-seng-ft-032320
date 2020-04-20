@@ -71,7 +71,7 @@ class Student
 
     array = DB[:conn].execute(sql, name).collect { |row|
       self.new_from_db(row)
-    }
+    }.first
     binding.pry
   end
 
